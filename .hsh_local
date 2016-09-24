@@ -1,7 +1,7 @@
 source ${PWD}/config
 source ${PWD}/alakazam/core/functions.sh
 source ${PWD}/alakazam/custom/functions.sh
-export PATH=$PATH:~/houdini/alakazam/custom/Jinsku/
+export PATH=$PATH:${PWD}/alakazam/custom/Jinsku/
 
 ## Aliases ##
 
