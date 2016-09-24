@@ -8,8 +8,8 @@ export PATH=$PATH:~/houdini/alakazam/custom/Jinsku/
 alias ll='ls -lahG --color=auto'
 alias dog='cat'
 alias rsort='sort -r'
-alias cpu='top -o cpu'
-alias mem='top -o rsize'
+alias cpu='top -o %CPU'
+alias mem='top -o %MEM'
 alias rdns="dig +short -x"
 
 ## Login ##
