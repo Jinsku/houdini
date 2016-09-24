@@ -1,6 +1,6 @@
-source ~/houdini/config
-source ~/houdini/alakazam/core/functions.sh
-source ~/houdini/alakazam/custom/functions.sh
+source ${PWD}/config
+source ${PWD}/alakazam/core/functions.sh
+source ${PWD}/alakazam/custom/functions.sh
 export PATH=$PATH:~/houdini/alakazam/custom/Jinsku/
 
 ## Aliases ##
@@ -17,11 +17,16 @@ alias rdns="dig +short -x"
 clear
 setTerminalTitle $(hostname)
 
-# Display the contents of a .motd file from the Home if they have one.
-display
-cat ~/houdini/version
+# Display the contents of a .motd files.
+if [ -e ${motdLeft} ]; then
+	export GREP_COLOR=35
+	paste ${motdLeft} | egrep --color -A5 "[^\"PKXYdb8\.\+\-]"
+	export GREP_COLOR='1;31' # set back to default
+fi
+
+cat ${PWD}/version
 printf "${NC}"
 
 # Notification for upcoming changes, etc
-grep -C5 --color ".*" ~/houdini/.motd-notify
+grep -C5 --color ".*" ${PWD}/.motd-notify
 echo
