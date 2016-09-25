@@ -43,3 +43,11 @@ timestamp() {
   STAMP="$@"
   date -d "${STAMP}"
 }
+
+#converts sar -r to human readable output and gives historical datas
+rpeaks(){ 
+	b2h(){
+    	echo $1 | awk 'function human(x){x[1]/=1024; if (x[1]>=1000){ x[2]++; human(x);}}{a[1]=$1; a[2]=0; human(a); print a[1]""substr("kMGTEPYZ",a[2]+1,1)}'| sed 's/\.\([0-9]\{2\}\)[0-9]*/\.\1/';
+	};
+	suf="";  $1  && suf="-f $1"; sar -r $suf | awk '{print (($3+$6+$7)*1000), $1,$2}' | grep -v ^0 | sort -r | tail | while read ios time ap; do echo "$(b2h $ios) $(date --date="$time $ap" "+%H:%M")"; done | sort -rh | (echo "FREE TIME"; cat)| column -t;
+};
