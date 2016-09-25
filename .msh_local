@@ -1,7 +1,7 @@
-source ${PWD}/config
-source ${PWD}/alakazam/core/functions.sh
-source ${PWD}/alakazam/custom/functions.sh
-export PATH=$PATH:${PWD}/alakazam/custom/Jinsku/
+source ~/merlin/config
+source ~/merlin/alakazam/core/functions.sh
+source ~/merlin/alakazam/custom/functions.sh
+export PATH=$PATH:~/merlin/alakazam/custom/Jinsku/
 
 ## Aliases ##
 
@@ -18,15 +18,18 @@ clear
 setTerminalTitle $(hostname)
 
 # Display the contents of a .motd files.
-if [ -e ${motdLeft} ]; then
-	export GREP_COLOR=35
-	paste ${motdLeft} | egrep --color -A5 "[^\"PKXYdb8\.\+\-]"
-	export GREP_COLOR='1;31' # set back to default
+if [ -e ~/merlin/${motdLeft} ]; then
+    export GREP_COLOR=35
+    paste ~/merlin/${motdLeft} | egrep --color -A5 "[^\"PKXYdb8\.\+\-]"
+    export GREP_COLOR=36
+    paste ~/merlin/${motdRight} | egrep --color -A5 "[^\"PKXYdb8\.\+\-]"
+    export GREP_COLOR='1;31' # set back to default
+else echo "No .motd";
 fi
 
-cat ${PWD}/version
+echo -n $(cat ~/merlin/version);echo " - $(date)"
 printf "${NC}"
 
 # Notification for upcoming changes, etc
-grep -C5 --color ".*" ${PWD}/.motd-notify
+grep -C5 --color ".*" ~/merlin/.motd-notify
 echo
