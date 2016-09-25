@@ -71,7 +71,7 @@ Thu Oct 19 00:00:00 EDT 6969
 
 ###rpeaks
 
-Returns daily sar -r output in human-readable format
+Returns peak sar -r usage in human-readable format
 
 Example usage:
 
