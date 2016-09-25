@@ -5,10 +5,10 @@ A custom shell configuration/toolset for internal checks, includes all software 
 
 ##Installing
 
-Add the following to your .bashrc or .bash_profile
+Clone and add the following to your .bashrc or .bash_profile, adjusting the path as necessary
 
 ```bash
-source ~/houdini/.hsh_local
+source ~/merlin/.msh_local
 ```
 
 
