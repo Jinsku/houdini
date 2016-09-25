@@ -68,3 +68,24 @@ Example usage:
 timestamp "October 19, 6969"
 Thu Oct 19 00:00:00 EDT 6969
 ```
+
+###rpeaks
+
+Returns daily sar -r output in human-readable format
+
+Example usage:
+
+```bash
+rpeaks 
+FREE   TIME
+1.93G  16:48
+1.93G  16:42
+1.93G  16:38
+1.93G  16:36
+1.93G  16:32
+1.93G  16:24
+1.93G  16:22
+1.93G  16:14
+1.93G  01:42
+1.93G  00:42
+```
