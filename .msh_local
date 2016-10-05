@@ -33,4 +33,4 @@ printf "${NC}"
 # Notification for upcoming changes, etc
 grep -C5 --color ".*" ~/merlin/.motd-notify
 echo
-export PS1="\[\033[37m\]msh \[$(tput sgr0)\]\[\033[36m\]\w\[$(tput sgr0)\]> "
+export PS1="\[\033[37m\]msh \[$(tput sgr0)\]\[\033[36m\]\w\[$(tput sgr0)\]\[\033[37m\]> "
